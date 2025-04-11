@@ -14,11 +14,9 @@
     </div>
 
     <script>
-        // Clear profile data
         localStorage.removeItem('userProfile');
         localStorage.removeItem('profileImage');
 
-        // Countdown and redirect
         let countdown = 5;
         const countdownElement = document.getElementById('countdown');
 
@@ -26,11 +24,11 @@
             countdown--;
             countdownElement.textContent = countdown;
             if (countdown <= 0) {
-                window.location.href = "index.html"; // Redirect to home
+                window.location.href = "index.html";
             }
         }
 
-        setInterval(updateCountdown, 1000); // Update every second
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>

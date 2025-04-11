@@ -7,6 +7,7 @@
   <title>Wave</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
 </head>
 <body>
   <div class="container">
@@ -22,7 +23,7 @@
 
     <section class="onboarding">
       <h1>Welcome to <span class="logo-name">Wave</span>!</h1>
-      <h2>Launching at the end of April 2025</h2>
+      <h2 id="random-message"></h2>
       <p>Join our <a onclick="window.location.href = 'https://discord.gg/8GghrPFUPY';" target="_blank" class="discord-link">Discord</a>!</p>
       <button class="btn">Access Unblocker</button>
       <p class="import-text">Need an account? <a href="/signup.html" class="sign-up-link">Sign up here!</a></p>
@@ -31,4 +32,27 @@
   </div>
 
   <div class="wave"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const messages = [
+      "We're so cool",
+      "RAX was here lol",
+      "not topping this lil bro",
+      "👀",
+      "I swear I wasnt snooping in the code",
+      "the other wave is pretty cool I guess"
+      ];
+    
+      const heading = document.getElementById("random-message");
+    
+      if (heading) {
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        heading.textContent = randomMessage;
+      } else {
+        console.error("Element #random-message not found.");
+      }
+    });
+    </script>
+    
 </html>
