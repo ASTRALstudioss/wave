@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="Profile.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script defer src="countdown.js"></script>
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <input type="text" class="search-box" placeholder="Search...">
             <ul>
-                <li onclick="window.location.href = '/';"><i class="fa-solid fa-house"></i><span class="title">Home</span></li>
+                <li onclick="window.location.href = 'index.html';"><i class="fa-solid fa-house"></i><span class="title">Home</span></li>
                 <li onclick="window.location.href = 'profile.html';"><i class="fa-solid fa-user"></i><span class="title">Profile</span></li>
                 <li onclick="window.location.href = 'settings.html';"><i class="fa-solid fa-gear"></i><span class="title">Settings</span></li>
                 <li onclick="window.location.href = 'logout.html';"><i class="fa-solid fa-sign-out"></i><span class="title">Log Out</span></li>
@@ -22,7 +24,7 @@
         <section class="edit-profile" style="margin-left: 20%;">
             <h1>Edit Your Profile</h1>
 
-            <!-- Profile Picture Upload -->
+
             <label for="profile-pic">Change Profile Picture:</label>
             <input type="file" id="profile-pic" accept="image/*">
             <img id="preview-img" class="profile-pic" style="display: none;">
@@ -39,7 +41,7 @@
     </div>
 
     <script>
-        // Load existing profile data when page loads
+
         function loadProfileData() {
             const profileData = JSON.parse(localStorage.getItem('userProfile'));
 
@@ -55,7 +57,7 @@
             }
         }
 
-        // Save updated profile data when the user clicks "Save Changes"
+   
         function saveProfile() {
             const name = document.getElementById('name').value;
             const bio = document.getElementById('bio').value;
@@ -74,10 +76,10 @@
             const profileData = { name, bio };
             localStorage.setItem('userProfile', JSON.stringify(profileData));
 
-            window.location.href = `profile.html`; // Redirect to profile page after saving
+            window.location.href = `profile.html`;
         }
 
-        // Load profile data on page load
+     
         window.onload = loadProfileData;
     </script>
 </body>
